@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -100,7 +100,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="uP6-Bx-lZF" kind="show" id="qen-D8-Dem"/>
+                                                    <segue destination="uP6-Bx-lZF" kind="show" id="9Xf-gI-CUS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euO-TF-cLo" userLabel="Ocean">
@@ -432,26 +432,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zn-jR-Zh0">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fo-9d-ojh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Weather">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="36"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWW-YE-4VZ">
+                                        <rect key="frame" x="152.5" y="83" width="109.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="output" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTp-H3-2BB">
+                                        <rect key="frame" x="160.5" y="162.5" width="93" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0fo-9d-ojh" secondAttribute="trailing" id="2DB-vf-o4E"/>
-                                    <constraint firstItem="0fo-9d-ojh" firstAttribute="leading" secondItem="0zn-jR-Zh0" secondAttribute="leading" id="bXM-tA-xcY"/>
-                                    <constraint firstItem="0fo-9d-ojh" firstAttribute="top" secondItem="0zn-jR-Zh0" secondAttribute="top" id="rPx-BK-Dah"/>
-                                    <constraint firstAttribute="bottom" secondItem="0fo-9d-ojh" secondAttribute="bottom" id="zCk-lQ-tmy"/>
+                                    <constraint firstItem="dTp-H3-2BB" firstAttribute="centerX" secondItem="0zn-jR-Zh0" secondAttribute="centerX" id="D7A-E6-fwl"/>
+                                    <constraint firstItem="VWW-YE-4VZ" firstAttribute="centerY" secondItem="0zn-jR-Zh0" secondAttribute="centerY" id="JrA-TS-1Ao"/>
+                                    <constraint firstItem="VWW-YE-4VZ" firstAttribute="centerX" secondItem="0zn-jR-Zh0" secondAttribute="centerX" id="VSE-vn-E0e"/>
+                                    <constraint firstAttribute="bottom" secondItem="dTp-H3-2BB" secondAttribute="bottom" id="gVZ-Ih-ZcY"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XuM-VU-fml">
@@ -557,6 +556,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8cv-Mj-bkk"/>
+                    <connections>
+                        <outlet property="outputLabel" destination="dTp-H3-2BB" id="aXJ-Qg-ECi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PA9-c3-fkp" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,6 +705,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

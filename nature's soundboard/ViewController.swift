@@ -7,11 +7,13 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
-        
+    
+    
     var player: AVAudioPlayer?
 
   // 3rd view controller buttons and sounds
@@ -24,23 +26,17 @@ class ViewController: UIViewController {
     
     
         func playSound() {
-            guard let url = Bundle.main.url(forResource: "birds and monkeys", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"birds and monkeys"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
 
     }
     
@@ -53,24 +49,17 @@ class ViewController: UIViewController {
         
     
             func playSound1() {
-                guard let url = Bundle.main.url(forResource: "chimpanzee", withExtension: "mp3") else { return }
-
-                do {
-                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                    try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                    player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        
-        
+                if let asset = NSDataAsset(name:"chimpanzee"){
+                 
+                       do {
+                             // Use NSDataAsset's data property to access the audio file stored in Sound.
+                              player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                             // Play the above sound file.
+                             player?.play()
+                       } catch let error as NSError {
+                             print(error.localizedDescription)
+                       }
+                    }
         }
 
         @IBAction func howlermonkeys(_ sender: UIButton) {
@@ -79,23 +68,17 @@ class ViewController: UIViewController {
         }
     
             func playSound2() {
-                guard let url = Bundle.main.url(forResource: "howler monkeys", withExtension: "mp3") else { return }
-
-                do {
-                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                    try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                    player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+                if let asset = NSDataAsset(name:"howler monkeys"){
+                 
+                       do {
+                             // Use NSDataAsset's data property to access the audio file stored in Sound.
+                              player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                             // Play the above sound file.
+                             player?.play()
+                       } catch let error as NSError {
+                             print(error.localizedDescription)
+                       }
+                    }
             }
 
         
@@ -105,23 +88,17 @@ class ViewController: UIViewController {
         }
     
             func playSound3() {
-                guard let url = Bundle.main.url(forResource: "rainforest", withExtension: "mp3") else { return }
-
-                do {
-                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                    try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                    player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+                if let asset = NSDataAsset(name:"rainforest"){
+                 
+                       do {
+                             // Use NSDataAsset's data property to access the audio file stored in Sound.
+                              player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                             // Play the above sound file.
+                             player?.play()
+                       } catch let error as NSError {
+                             print(error.localizedDescription)
+                       }
+                    }
         }
 
 // 4th view controller
@@ -131,24 +108,17 @@ class ViewController: UIViewController {
             playSound4()
     }
         func playSound4() {
-            guard let url = Bundle.main.url(forResource: "thunder", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-            // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-            guard let player = player else { return }
-
-            player.play()
-
-        } catch let error {
-            print(error.localizedDescription)
-        }
-
+            if let asset = NSDataAsset(name:"thunder"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
     }
         @IBAction func wind(_ sender: UIButton ) {
             
@@ -156,22 +126,17 @@ class ViewController: UIViewController {
         }
     
         func playSound5() {
-            guard let url = Bundle.main.url(forResource: "wind", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-            // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-            guard let player = player else { return }
-
-            player.play()
-
-        } catch let error {
-            print(error.localizedDescription)
-        }
+            if let asset = NSDataAsset(name:"wind"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
     }
     
         @IBAction func peacefulrain(_ sender: UIButton) {
@@ -179,23 +144,17 @@ class ViewController: UIViewController {
             playSound6()
     }
         func playSound6() {
-            guard let url = Bundle.main.url(forResource: "peaceful rain", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-            // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-            guard let player = player else { return }
-
-            player.play()
-
-        } catch let error {
-            print(error.localizedDescription)
-        }
+            if let asset = NSDataAsset(name:"peaceful rain"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
     
         @IBAction func tornado(_ sender: UIButton) {
@@ -203,23 +162,17 @@ class ViewController: UIViewController {
         }
     
         func playSound7() {
-            guard let url = Bundle.main.url(forResource: "tornado", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-            // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-            guard let player = player else { return }
-
-            player.play()
-
-        } catch let error {
-            print(error.localizedDescription)
-        }
+            if let asset = NSDataAsset(name:"tornado"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
     
     
@@ -229,23 +182,17 @@ class ViewController: UIViewController {
         }
         
         func playSound8() {
-            guard let url = Bundle.main.url(forResource: "waves crashing", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-            // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-            guard let player = player else { return }
-
-            player.play()
-
-        } catch let error {
-            print(error.localizedDescription)
-        }
+            if let asset = NSDataAsset(name:"waves crashing"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
     }
     
         @IBAction func seagulls(_ sender: UIButton) {
@@ -255,23 +202,17 @@ class ViewController: UIViewController {
         }
     
         func playSound11() {
-            guard let url = Bundle.main.url(forResource: "seagulls", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"seagulls"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
     
         @IBAction func hurricane(_ sender: UIButton) {
@@ -280,23 +221,17 @@ class ViewController: UIViewController {
         }
     
         func playSound12() {
-            guard let url = Bundle.main.url(forResource: "hurricane", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"hurricane"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
 
         @IBAction func peacefulwaves(_ sender: UIButton) {
@@ -305,23 +240,17 @@ class ViewController: UIViewController {
         }
     
         func playSound13() {
-            guard let url = Bundle.main.url(forResource: "peaceful waves", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"peaceful waves"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
 // 2nd View Controller as i did this in a weird order
     
@@ -332,23 +261,17 @@ class ViewController: UIViewController {
         }
     
         func playSound14() {
-            guard let url = Bundle.main.url(forResource: "loonies", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"loonies"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
     
         @IBAction func woodpecker(_ sender: UIButton) {
@@ -358,23 +281,17 @@ class ViewController: UIViewController {
         }
     
         func playSound15() {
-            guard let url = Bundle.main.url(forResource: "woodpecker", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"woodpecker"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
     
         @IBAction func bluejay(_ sender: UIButton) {
@@ -383,23 +300,17 @@ class ViewController: UIViewController {
         }
     
         func playSound16() {
-            guard let url = Bundle.main.url(forResource: "blue jay", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"blue jay"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
     
         @IBAction func Hawk(_ sender: UIButton) {
@@ -409,22 +320,104 @@ class ViewController: UIViewController {
         }
     
         func playSound17() {
-            guard let url = Bundle.main.url(forResource: "hawk", withExtension: "mp3") else { return }
-
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-
-                // The following line is required for the player to work on iOS 11. Change the file type accordingly//
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-
-                guard let player = player else { return }
-
-                player.play()
-
-            } catch let error {
-                print(error.localizedDescription)
-            }
+            if let asset = NSDataAsset(name:"hawk"){
+             
+                   do {
+                         // Use NSDataAsset's data property to access the audio file stored in Sound.
+                          player = try AVAudioPlayer(data:asset.data, fileTypeHint:"caf")
+                         // Play the above sound file.
+                         player?.play()
+                   } catch let error as NSError {
+                         print(error.localizedDescription)
+                   }
+                }
         }
+
+    let locationManager = CLLocationManager()
+    
+    var currentLocation: CLLocation?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupLocation()
+    }
+    
+    func setupLocation() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if !locations.isEmpty, currentLocation == nil {
+            currentLocation = locations.first
+            locationManager.stopUpdatingLocation()
+            requestWeatherForLocation()
+        }
+    }
+    
+    func requestWeatherForLocation() {
+        guard let currentLocation = currentLocation else {
+            return
+        }
+        let long = currentLocation.coordinate.longitude
+        let lat = currentLocation.coordinate.latitude
+        
+        let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid=0cddd203c53b2f938a5dce5a19763ddd"
+        
+        URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
+            
+            //Validation
+            
+            guard let data = data, error == nil else {
+                print("something went wrong")
+                return
+            }
+            
+            //Convert data to models
+            var json: WeatherResponse?
+            do {
+                json = try JSONDecoder().decode(WeatherResponse.self, from: data)
+            }
+            catch {
+                print("error: \(error)")
+            }
+            guard let result = json else{
+                return
+            }
+            
+            print(result.weather[0].main)
+
+//            DispatchQueue.main.async {
+//
+//                self.outputLabel.text = (result : result)
+//            }
+//
+            
+        }).resume()
+        
+    }
+    
+    
+    
+   
+    
+    
+    
+}
+struct WeatherResponse: Codable {
+    
+    var weather: [weatherValue]
+    
+}
+
+struct weatherValue: Codable {
+    
+    var main: String
+    
 }
